@@ -158,6 +158,35 @@ const PortfolioPage: React.FC = () => {
             </div>
           </article>
 
+          <article
+            className="project"
+          >
+            <div className="project-images">
+              <div className="project-image">
+                <Image
+                  src="/images/calcsoma.png"
+                  width={500}
+                  height={500}
+                  alt="Calculadora efetuando soma"
+                />
+              </div>
+              <div className="project-image">
+                <Image
+                  src="/images/calcexpo.png"
+                  width={500}
+                  height={500}
+                  alt="Calculadora efetuando exponenciação"
+                />
+              </div>
+            </div>
+            <div className="project-content">
+              <h3 className="project-title">Calculadora</h3>
+              <p className="project-desc">
+                Uma calculadora simples feita em C#, com operações básicas sequenciais e outras operações como exponenciação e raiz quadrada.
+              </p>
+            </div>
+          </article>
+
         </section>
         <section>
           <h2>Contato</h2>
