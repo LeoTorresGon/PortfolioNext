@@ -6,10 +6,20 @@ const PortfolioPage: React.FC = () => {
   return (
     <>
       <main role="main" className="container">
+        {/* 1. Pagina Inicial */}
+        <Image
+          src="/images/perfil.jpg"
+          alt="Leonardo Torres"
+          width={500}
+          height={500}
+          style = {{ borderRadius: '50%',  border: '2px solid #fff',  width: '400px', height: '460px', margin: 'auto' }}
+        />
+          {/* Style-inline apenas na imagem, porque não funcionou por classes */}
         <header>
           <h1>Leonardo Torres</h1>
           <p>Back End Developer</p>
         </header>
+        {/* Conteúdo separado por sections para separar a página na estrutura obrigatória com excessão da página inicial, feita num header por questão visual */}
         <section>
           <h2>Sobre Mim</h2>
           <p className="about-me">
@@ -17,7 +27,8 @@ const PortfolioPage: React.FC = () => {
             contato com a computação como filho de um programador e tenho interesse pela área desde sempre. <br/>  Em 2021, dei meus primeiros passos 
             para aprender a programar ao entrar em um curso técnico em informática na Universidade do Vale do Paraíba (Univap). Desde então,
             busco projetos para aprimorar minhas habilidades como dev. Hoje, já fiz projetos para Android em Kotlin, mods em Java para Minecraft, 
-            aplicativos desktop com C# e muitos outros. Diversas vezes integrei os projetos com banco de dados MySQL
+            aplicativos desktop com C# e muitos outros. Diversas vezes integrei os projetos com banco de dados MySQL e busco melhorar minhas habilidades
+            no backend, assim como com banco de dados.
           </p>
         </section>
         <section>
@@ -36,10 +47,11 @@ const PortfolioPage: React.FC = () => {
 
         <section className="projects">
           <h2>Projetos</h2>
-
           <article
             className="project"
           >
+
+            {/* O projeto de gerenciamento de redes não é um projeto que pode ser publicado sem autorização de outras entidades, portanto deixarei apenas as imagens e descrição */}
             <div className="project-images">
               <div className="project-image">
                 <Image
@@ -125,6 +137,12 @@ const PortfolioPage: React.FC = () => {
               <p className="project-desc">
                 Um pequeno projeto testando processamento de imagem mexendo com os valores RGB dos pixels da imagem, feito em .NET.
               </p>
+              <a
+                href="https://github.com/LeoTorresGon/ProcessamentoDeImagem-CS"
+                target="_blank"
+                className="github-link">
+              GitHub
+            </a>
             </div>
           </article>
 
@@ -137,7 +155,7 @@ const PortfolioPage: React.FC = () => {
                   src="/images/paint1.png"
                   width={500}
                   height={500}
-                  alt="Imitação Paint Triângulo Azul Pontilhado"
+                  alt="Paint Triângulo Azul Pontilhado"
                 />
               </div>
               <div className="project-image">
@@ -145,16 +163,20 @@ const PortfolioPage: React.FC = () => {
                   src="/images/paint2.png"
                   width={500}
                   height={500}
-                  alt="Imitação Paint Retângulo Roxo Ponto Linha"
+                  alt="Paint Retângulo Roxo Ponto Linha"
                 />
               </div>
             </div>
             <div className="project-content">
               <h3 className="project-title">Paint</h3>
               <p className="project-desc">
-                Programa feito para permitir desenhar formas na tela com opções pré definidas de cores, tamanho de linha e forma de contorno. 
-                Além disso, pode salvar e carregar as formas desenhadas anteriormente. 
+                Programa feito em C# para permitir desenhar formas na tela com opções pré definidas de cores, tamanho de linha e forma de contorno. 
               </p>
+              <a className="github-link"
+                href="https://github.com/LeoTorresGon/Paint-CS"
+                target="_blank">
+              GitHub
+            </a>
             </div>
           </article>
 
@@ -184,6 +206,11 @@ const PortfolioPage: React.FC = () => {
               <p className="project-desc">
                 Uma calculadora simples feita em C#, com operações básicas sequenciais e outras operações como exponenciação e raiz quadrada.
               </p>
+              <a className="github-link"
+                href="https://github.com/LeoTorresGon/Calculadora-CS"
+                target="_blank">
+              GitHub
+            </a>
             </div>
           </article>
 
@@ -214,28 +241,23 @@ const PortfolioPage: React.FC = () => {
           </div>
         </section>
       </main>
+      <footer>
+        <p>Desenvolvido por Leonardo Torres</p>
+      </footer>
       <style jsx>{`
+      /* Optei pelas classes CSS para controle mais fácil do CSS e do HTML separadamente e melhor organização do código */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
 
         .container {
           font-family: 'Poppins', sans-serif;
           background: rgba(0, 0, 0, 0.75);
-          border-radius: 30px;
-          width: 100%;
           max-width: 1500px;
-          max-height: 900px;
+          max-height: 890px;
           overflow-y: auto;
           box-shadow: 0 8px 50px rgba(31, 38, 135, 0.7);
           padding: 40px 50px;
-          color: #fff;
-          scroll-behavior: smooth;
           margin: 40px auto;
+          border-radius: 40px;
         }
 
         header {
@@ -246,10 +268,9 @@ const PortfolioPage: React.FC = () => {
         header h1 {
           font-size: 4.2rem;
           font-weight: 700;
-          margin-bottom: 12px;
           letter-spacing: 4px;
           text-transform: uppercase;
-          text-shadow: 1.8px 1.8px 6px rgba(0, 0, 0, 0.85);
+          text-shadow: 1.8px 1.8px 6px rgba(50, 50, 50, 0.85);
         }
 
         header p {
@@ -282,7 +303,7 @@ const PortfolioPage: React.FC = () => {
         .skills {
           display: flex;
           flex-wrap: wrap;
-          gap: 22px;
+          gap: 20px;
         }
 
         .skill {
@@ -293,8 +314,6 @@ const PortfolioPage: React.FC = () => {
           font-size: 1.5rem;
           box-shadow: 0 7px 18px rgba(118, 75, 162, 0.75);
           transition: background 0.3s ease;
-          cursor: default;
-          user-select: none;
         }
 
         .skill:hover {
@@ -331,7 +350,7 @@ const PortfolioPage: React.FC = () => {
           max-width: 385px;
           padding-bottom: 4px;
           scrollbar-width: thin;
-          scrollbar-color: #764ba2 transparent; /* Firefox */
+          scrollbar-color: #764ba2 transparent;
         }
 
         .project-image {
@@ -345,19 +364,12 @@ const PortfolioPage: React.FC = () => {
           justify-content: center;
           align-items: center;
           color: #4a418f;
-          font-weight: 700;
-          font-size: 1.2rem;
-          user-select: none;
-          text-align: center;
           padding: 12px;
-          line-height: 1.2;
-          opacity: 0.8;
         }
 
         .project-content {
           flex: 1;
-          display: flex;
-          flex-direction: column;
+          position: relative;
         }
 
         .project-title {
@@ -365,15 +377,12 @@ const PortfolioPage: React.FC = () => {
           font-size: 2rem;
           margin-bottom: 12px;
           text-shadow: 1.5px 1.5px 6px rgba(0, 0, 0, 0.7);
-          user-select: text;
         }
 
         .project-desc {
           font-weight: 400;
           font-size: 1.3rem;
           color: #dcdcdc;
-          user-select: text;
-          line-height: 1.5;
         }
 
         .contact-info {
@@ -387,10 +396,7 @@ const PortfolioPage: React.FC = () => {
 
         .contact-info a {
           color: #bda1f7;
-          text-decoration: none;
           transition: color 0.3s ease;
-          word-break: break-word;
-          user-select: text;
         }
 
         .contact-info a:hover {
@@ -412,6 +418,23 @@ const PortfolioPage: React.FC = () => {
           background: #764ba2;
           border-radius: 15px;
         }
+
+        .github-link {
+          position: absolute;
+          background: #764ba2;
+          border-radius: 20px;
+          bottom: -90px;
+          right: -20px;
+          padding: 10px 20px;
+          color: #fff;
+          text-align: right;
+          transition: color 1.3s ease;
+        }
+
+        .github-link:hover {
+          background:rgb(141, 56, 175);
+        }
+        
       `}</style>
     </>
   );
