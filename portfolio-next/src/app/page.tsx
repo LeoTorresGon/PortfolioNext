@@ -31,6 +31,7 @@ const PortfolioPage: React.FC = () => {
             no backend, assim como com banco de dados.
           </p>
         </section>
+        {/* 3. Habilidades */}
         <section>
           <h2>Habilidades</h2>
           <div className="skills">
@@ -44,6 +45,8 @@ const PortfolioPage: React.FC = () => {
             <span className="skill">Paciência</span>
           </div>
         </section>
+
+        {/* 2. Projetos */}
 
         <section className="projects">
           <h2>Projetos</h2>
@@ -215,6 +218,8 @@ const PortfolioPage: React.FC = () => {
           </article>
 
         </section>
+        {/* 4. Contato */}
+
         <section>
           <h2>Contato</h2>
           <div className="contact-info">
