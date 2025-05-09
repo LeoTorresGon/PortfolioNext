@@ -60,7 +60,7 @@ HTML/CSS
 - **React**: ^19.0.0
 - **React-DOM**: ^19.0.0
 
-# USER GUIDE
+## USER GUIDE
 
 O projeto inteiro se dá em apenas uma página estruturada em:
 
